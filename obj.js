@@ -1,18 +1,17 @@
-function giveJobToStudent() {
-  const student = {
-    fullName: "Максим",
-    experienceInMonths: 12,
-    stack: ["HTML", "CSS", "JavaScript", "React"],
-  };
-  const updatedStudent = {
-    ...student,
-    job: "experience",
-  };
+const student = {
+  fullName: "Максим",
+  experienceInMonths: 12,
+  stack: ["HTML", "CSS", "JavaScript", "React"],
+};
 
-  alert(
-    `Поздравляем! У студента ${updatedStudent.fullName} появилась новая работа! Теперь он ${updatedStudent.job}`
-  );
-  console.log(updatedStudent);
-}
+const giveJobToStudent = (student, jobName) => {
+  let newObjStud = {};
+  newObjStud = { ...student };
+  newObjStud.job = "jobName";
+  alert(`Поздравляем! У студента ${newObjStud.fullName} появилась новая работа!
+  Теперь он ${[newObjStud.job]}`);
+  console.log(newObjStud);
+  return newObjStud;
+};
 
-giveJobToStudent();
+giveJobToStudent(student, "веб-разработчик");
