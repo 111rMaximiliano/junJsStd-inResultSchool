@@ -1,7 +1,12 @@
-const getDaysBeforeBirthday = () => {
-  let nextBirthdayDate = new Date("September 11, 2023");
-  let restOf = new Date("June 16, 2023");
-  let difference = nextBirthdayDate.getTime() - restOf.getTime();
-  console.log(Math.round(difference / 1000 / 60 / 60 / 24));
+const nextBirthdayDate = new Date("September 11, 2023");
+console.log(nextBirthdayDate);
+const today = new Date();
+console.log(today);
+
+const getDaysBeforeBirthday = (nextBirthdayDate) => {
+  const res = Math.round(
+    (nextBirthdayDate.getTime() - today.getTime()) / 1000 / 60 / 60 / 24
+  );
+  return res;
 };
-getDaysBeforeBirthday();
+console.log(getDaysBeforeBirthday(nextBirthdayDate));
