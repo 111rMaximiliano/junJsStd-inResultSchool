@@ -34,11 +34,20 @@ const usersObject = {
   },
 };
 
-function getAdultUsers(obj) {
-  for (const [key, value] of Object.entries(obj)) {
-    if (value.age >= 18) {
-      console.log([key, value]);
+function getAdultUsers() {
+  if (usersObject) {
+    for (key in usersObject) {
+      if (usersObject[key].age >= 18) {
+        console.log(usersObject[key]);
+      }
     }
   }
 }
-getAdultUsers(usersArray);
+if (usersArray) {
+  const arr = usersArray.filter((item) => {
+    return item.age >= 18;
+  });
+  console.log(arr);
+}
+
+getAdultUsers();
